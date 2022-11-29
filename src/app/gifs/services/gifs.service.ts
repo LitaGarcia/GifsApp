@@ -22,6 +22,10 @@ export class GifsService {
     // }
   }
 
+  public cleanData () {
+    return this._historial = [];
+  }
+
   public buscarGifs(query: string) {
     query = query.trim().toLocaleLowerCase();
     if (!this._historial.includes(query)) {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { GifsService } from 'src/app/gifs/services/gifs.service';
 
 @Component({
@@ -13,5 +13,9 @@ export class SidebarComponent {
   }
   buscar(item: string) {
     this.gifsService.buscarGifs(item);
+  }
+  cleanData() {
+    this.gifsService.cleanData();
+    this.gifsService.buscarGifs('');
   }
 }
