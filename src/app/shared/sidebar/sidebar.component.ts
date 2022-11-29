@@ -15,7 +15,10 @@ export class SidebarComponent {
     this.gifsService.buscarGifs(item);
   }
   cleanData() {
-    this.gifsService.cleanData();
     this.gifsService.buscarGifs('');
+    this.gifsService.cleanData();
+  }
+  searchRandom() {
+    this.gifsService.searchRandom();
   }
 }
