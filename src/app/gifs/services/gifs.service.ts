@@ -21,6 +21,7 @@ export class GifsService {
 
   public cleanData() {
     this._historial = [];
+    this.resultados = [];
   }
 
   public searchRandom() {
