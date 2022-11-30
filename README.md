@@ -8,7 +8,7 @@ In this project I fetch with the Gifphy App to give the users the gifs that they
 - Lazy Loading Scroll [ ]
 - Clean Data Button [x]
 - Random Gifs Button [x]
-- Deploy in Netlify [ ]
+- Deploy in Netlify [x]
 
 # A better way
 - I would like to use a better structure of CSS with SASS and partitions, also a semanthic HTML. 
