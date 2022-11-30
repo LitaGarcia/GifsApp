@@ -1,6 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SearchGifsResponse, Gif } from '../interfaces/gifs.interfaces';
+import { Gif } from '../interfaces/gif.interface';
+import { SearchGifsResponse } from '../interfaces/gifs.interfaces';
+import { SearchGifsRandom } from '../interfaces/gifsRandom.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -25,14 +27,12 @@ export class GifsService {
   }
 
   public searchRandom() {
-    const params = new HttpParams()
-      .set('apiKey', this.apiKey)
-      .set('limit', '10')
-      .set('q', 'random');
+    const params = new HttpParams().set('apiKey', this.apiKey);
     this.http
-      .get<SearchGifsResponse>(`${this.Url}/search`, { params: params })
-      .subscribe((resp: SearchGifsResponse) => {
-        this.resultados = resp.data;
+      .get<SearchGifsRandom>(`${this.Url}/random`, { params: params })
+      .subscribe((resp: SearchGifsRandom) => {
+        this.resultados = [];
+        this.resultados.push(resp.data);
         localStorage.setItem('resultados', JSON.stringify(this.resultados));
       });
   }

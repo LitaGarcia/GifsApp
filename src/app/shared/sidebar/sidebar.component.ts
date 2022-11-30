@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { GifsService } from 'src/app/gifs/services/gifs.service';
 
 @Component({
@@ -17,7 +17,8 @@ export class SidebarComponent {
   cleanData() {
     this.gifsService.cleanData();
   }
-  searchRandom() {
+  public searchRandom() {
     this.gifsService.searchRandom();
+    
   }
 }
